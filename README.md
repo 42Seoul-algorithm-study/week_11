@@ -15,4 +15,4 @@
 
 6️⃣  [2910번:빈도 정렬](https://www.acmicpc.net/problem/2910)
 
-7️⃣  [10814번: 국영구](https://www.acmicpc.net/problem/10814)
+7️⃣  [10814번: 나이순 정렬](https://www.acmicpc.net/problem/10814)
