@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <cstring>
+#include <algorithm>
 
 using namespace	std;
 int	n;
@@ -44,26 +45,27 @@ bool	compareascii(string a, string b)
 {
 	if (a.size() != b.size())
 		return (a.size() < b.size());
-	int	suma, sumb;
+	int	suma = 0, sumb = 0;
 
 	for (int i = 0; i < a.size(); i++)
 	{
-		if (a[i] > '0' && a[i] < '9')
+		if (isdigit(a[i]))
 			suma += a[i] - '0';
 	}
 	for (int i = 0; i < b.size(); i++)
 	{
-		if (b[i] > '0' && b[i] < '9')
+		if (isdigit(b[i]))
 			sumb += b[i] - '0';
 	}
-	if (suma != sumb && suma && sumb)
+	if (suma != sumb)
 		return (suma < sumb);
-	for (int i = 0; i < a.size(); i++)
-	{
-		if (a[i] != b[i])
-			return (sort_ascii(a[i], b[i]));
-	}
-	return (1);
+	return (a < b); // 이래도되는구나...
+	// for (int i = 0; i < a.size(); i++)
+	// {
+	// 	if (a[i] != b[i])
+	// 		return (sort_ascii(a[i], b[i]));
+	// }
+	// return (1);
 }
 
 int	main()
