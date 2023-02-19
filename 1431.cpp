@@ -1,4 +1,4 @@
-//
+// 시리얼 번호
 
 #include <iostream>
 #include <cstring>
