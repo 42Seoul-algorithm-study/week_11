@@ -18,9 +18,9 @@ void	add_data(vector<pair<int, int> > *data, int target)
 	(*data).push_back(make_pair(target, 1));
 }
 
-int	compare(pair<int, int> data1, pair<int, int> data2)
+bool	compare(pair<int, int> data1, pair<int, int> data2)
 {
-	return (data2.second - data1.second);
+	return (data1.second > data2.second); // 이거 부등호 말고 a - b 리턴 하면 안됨
 }
 
 int	main()
@@ -37,9 +37,10 @@ int	main()
 		cin >> tmp;
 		add_data(&data, tmp);
 	}
-	sort(data.begin(), data.end(), compare);
-	for (int i = 0; i < data.size(); i++)
-		cout << data[i].first << ' ' << data[i].second << '\n';
+	// for (int i = 0; i < data.size(); i++)
+	// 	cout << "num: "<<  data[i].first << " idx: " << data[i].second << '\n';
+	stable_sort(data.begin(), data.end(), compare);
+
 	while (data.size())
 	{
 		while (data[0].second)
